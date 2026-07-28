@@ -1,7 +1,7 @@
 # Individual Report: Lab 3 - Chatbot vs ReAct Agent
 
 - **Student Name**: Hà Anh Tuấn
-- **Student ID**: [Điền MSSV]
+- **Student ID**: 2A202601582
 - **Date**: 28/07/2026
 - **Role**: Test Designer & Evaluator (Role 1 + Role 5 — Product Architect & Observability)
 ---
