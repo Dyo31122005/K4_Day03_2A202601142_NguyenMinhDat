@@ -1,7 +1,7 @@
 # Individual Report: Lab 3 - Chatbot vs ReAct Agent
 
 - **Student Name**: Trần Hoàng Mai Anh
-- **Student ID**: [Điền MSSV]
+- **Student ID**: 2A202601324
 - **Date**: 28/07/2026
 - **Role**: Tool & Prompt Engineer (Role 2 + Role 3)
 ---
