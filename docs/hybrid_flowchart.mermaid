@@ -1,0 +1,37 @@
+flowchart TD
+    Start([Câu hỏi người dùng]) --> Q1{Có nhắc order_id cụ thể?<br/>vd #A1001, #Z9999}
+
+    Q1 -->|Có| Q1b{order_id có tồn tại<br/>trong hệ thống?}
+    Q1 -->|Không| Q2{Cần dữ liệu thời gian thực<br/>của MỘT đơn cụ thể<br/>ngày mua/trạng thái/hạn đổi trả?}
+
+    Q1b -->|Không biết trước| Agent1[["🧠 ReAct Agent Path<br/>gọi lookup_order / check_return_eligibility"]]
+
+    Q2 -->|Có nhưng thiếu order_id| Clarify[["🧠 ReAct Agent Path<br/>hỏi lại người dùng cung cấp mã đơn<br/>KHÔNG tự bịa order_id"]]
+    Q2 -->|Không, chỉ hỏi chính sách/lý thuyết chung| Chatbot1[["💬 Chatbot Path<br/>trả lời trực tiếp, nhanh, rẻ hơn"]]
+
+    Agent1 --> ToolExec["Thực thi tool thật<br/>(mock_db.py)"]
+    Clarify --> ToolExec
+
+    ToolExec --> Found{Tool trả kết quả<br/>hợp lệ?}
+    Found -->|Có| Grounded["✅ Final Answer\ntrích thẳng số liệu từ Observation\n(grounded = True)"]
+    Found -->|Không tìm thấy / lỗi| Honest["✅ Báo lỗi trung thực\n'Không tìm thấy đơn hàng ...'\nKHÔNG suy diễn tiếp"]
+
+    Chatbot1 --> Direct["Trả lời 1 lượt LLM\n(tool_calls = 0, grounded = False)"]
+
+    subgraph Guardrail["🛡️ Guardrail (áp dụng cho ReAct Agent Path)"]
+        direction LR
+        Step["Mỗi vòng lặp: step += 1"] --> Check{"step >= MAX_ITERATIONS?"}
+        Check -->|Chưa| Continue["Thought → Action → Observation\nlặp tiếp"]
+        Check -->|Đã đạt| Fallback["Safe Fallback:\n'không thể hoàn tất trong giới hạn xử lý'"]
+    end
+
+    Grounded -.-> Guardrail
+    Honest -.-> Guardrail
+
+    style Chatbot1 fill:#7d8c78,color:#fff
+    style Direct fill:#7d8c78,color:#fff
+    style Agent1 fill:#d4a39e,color:#000
+    style Clarify fill:#d4a39e,color:#000
+    style Grounded fill:#bbcbb5,color:#000
+    style Honest fill:#bbcbb5,color:#000
+    style Fallback fill:#ffdad6,color:#000

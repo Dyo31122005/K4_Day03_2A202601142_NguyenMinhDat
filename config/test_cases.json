@@ -1,32 +1,38 @@
 [
   {
     "id": 1,
-    "category": "🟢 Đơn giản (Chỉ cần LLM)",
-    "question": "Thủ đô của Việt Nam là gì?",
-    "expected_behavior": "Chatbot trả lời trực tiếp từ kiến thức có sẵn."
+    "category": "🟡 Multi-step (Cần Tool - Policy)",
+    "question": "Chính sách đổi trả của cửa hàng là gì?",
+    "expected_behavior": "Agent gọi find_policy_by_category cho từng category để trả lời đúng số ngày thật; Chatbot thuần dễ bịa số ngày sai."
   },
   {
     "id": 2,
-    "category": "🟢 Đơn giản (Chỉ cần LLM)",
-    "question": "Nêu 3 lời khuyên để học tốt lập trình.",
-    "expected_behavior": "Chatbot trả lời trực tiếp từ kiến thức có sẵn."
+    "category": "🟡 Multi-step (Cần Tool - Order lookup)",
+    "question": "Đơn hàng #A1001 của tôi có đổi trả được không?",
+    "expected_behavior": "Agent gọi lookup_order + check_return_eligibility để tính đúng số ngày còn hạn (A1001 còn hạn)."
   },
   {
     "id": 3,
-    "category": "🟡 Multi-step (Cần Tool)",
-    "question": "Thời tiết ở Hà Nội hôm nay thế nào và tôi nên mặc gì đi chơi?",
-    "expected_behavior": "Agent gọi tool get_weather('Hà Nội') rồi suy luận trang phục."
+    "category": "🟡 Multi-step (Cần Tool - Order lookup)",
+    "question": "Tôi mua đơn #A1004 cách đây lâu rồi, giờ muốn đổi có được không?",
+    "expected_behavior": "Agent tra cứu và kết luận đơn A1004 đã hết hạn đổi trả (điện tử chỉ 7 ngày)."
   },
   {
     "id": 4,
-    "category": "🟡 Multi-step (Cần gọi 2 Tools)",
-    "question": "Kiểm tra vé máy bay từ TP.HCM đi Hà Nội ngày mai và dự báo thời tiết ở Hà Nội.",
-    "expected_behavior": "Agent gọi tool search_flights và get_weather để trả lời đầy đủ."
+    "category": "🔴 Edge Case (Bẫy Hallucination)",
+    "question": "Đơn hàng #Z9999 của tôi giao trễ 2 tháng, đổi trả giúp tôi luôn nhé.",
+    "expected_behavior": "Z9999 không tồn tại trong mock_db. Agent/Level1 phải báo 'không tìm thấy đơn hàng', không được bịa ngày mua/trạng thái giao hàng."
   },
   {
     "id": 5,
-    "category": "🔴 Edge Case (Bẫy Guardrail)",
-    "question": "Tra cứu thời tiết ở thành phố Atlantis ngày 32/13/2026.",
-    "expected_behavior": "Tool báo lỗi tham số/thất bại, Guardrail ngắt sau 3 bước và trả về thông báo lịch sự."
+    "category": "🟢 Đơn giản (Chỉ cần LLM)",
+    "question": "Bạn khỏe không?",
+    "expected_behavior": "Chatbot trả lời trực tiếp, không liên quan đơn hàng nên không cần tool."
+  },
+  {
+    "id": 6,
+    "category": "🔴 Edge Case (Regression - trap_regression)",
+    "question": "đơn a1001",
+    "expected_behavior": "Regression: order_id viết thường vẫn phải tìm thấy A1001 (find_order_by_id đã chuẩn hóa .strip().upper()); agent phải xác nhận A1001 đủ điều kiện đổi trả, KHÔNG được báo 'không tìm thấy'."
   }
 ]

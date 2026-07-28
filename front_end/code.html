@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Re-Life | Return Eligibility</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#d6c4a5",
+                      "error-container": "#ffdad6",
+                      "on-error-container": "#93000a",
+                      "secondary": "#7c5450",
+                      "primary-fixed-dim": "#bbcbb5",
+                      "on-secondary-fixed-variant": "#623d3a",
+                      "inverse-surface": "#30312e",
+                      "on-secondary-fixed": "#2f1311",
+                      "background": "#fbf9f4",
+                      "on-background": "#1b1c19",
+                      "on-primary-container": "#f7fff1",
+                      "on-surface-variant": "#444842",
+                      "surface-container-high": "#eae8e3",
+                      "error": "#ba1a1a",
+                      "secondary-container": "#ffcbc6",
+                      "surface-dim": "#dbdad5",
+                      "on-secondary": "#ffffff",
+                      "primary-container": "#6a7965",
+                      "inverse-on-surface": "#f2f1ec",
+                      "on-tertiary-container": "#fffbff",
+                      "on-secondary-container": "#7b534f",
+                      "secondary-fixed-dim": "#eebab5",
+                      "on-tertiary-fixed-variant": "#51452d",
+                      "on-error": "#ffffff",
+                      "tertiary": "#675a41",
+                      "tertiary-fixed": "#f3e0c0",
+                      "tertiary-container": "#817358",
+                      "outline-variant": "#c4c8bf",
+                      "surface-variant": "#e4e2dd",
+                      "surface": "#fbf9f4",
+                      "on-primary-fixed": "#121f10",
+                      "inverse-primary": "#bbcbb5",
+                      "on-primary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-highest": "#e4e2dd",
+                      "secondary-fixed": "#ffdad6",
+                      "surface-container-low": "#f5f3ee",
+                      "surface-tint": "#546250",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed": "#d7e7d0",
+                      "surface-bright": "#fbf9f4",
+                      "primary": "#52604e",
+                      "outline": "#747871",
+                      "on-primary-fixed-variant": "#3d4a39",
+                      "on-tertiary-fixed": "#231a06",
+                      "surface-container": "#f0eee9",
+                      "on-surface": "#1b1c19"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1200px",
+                      "stack-lg": "48px",
+                      "margin-mobile": "20px",
+                      "stack-sm": "12px",
+                      "gutter": "24px",
+                      "margin-desktop": "64px",
+                      "unit": "8px",
+                      "stack-md": "24px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "caption": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Playfair Display"
+                      ],
+                      "display-lg-mobile": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .soft-shadow {
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+        }
+        
+        .message-enter {
+            animation: slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(16px);
+        }
+        
+        @keyframes slideUpFade {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.6s; }
+        .delay-3 { animation-delay: 1.2s; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation (Shell suppressed based on task focus intent, but included for brand anchor as requested by JSON structure if needed, opting to suppress for focused transactional flow) -->
+<header class="bg-surface/80 backdrop-blur-md fixed top-0 w-full z-50 shadow-sm transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 w-full max-w-container-max mx-auto">
+<div class="font-display-lg text-display-lg-mobile text-primary flex items-center gap-2">
+<span class="material-symbols-outlined filled-icon text-primary">eco</span>
+<span>Re-Life</span>
+</div>
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Shop</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">About</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">FAQ</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-full hover:bg-surface-tint transition-colors duration-200 hidden md:block">
+                    AI Online
+                </button>
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="A softly lit, warm lifestyle portrait of a serene individual in minimal, elegant clothing, set against a calm, natural beige background, embodying the soothing and premium aesthetic of the Re-Life brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIr76CP4sLZ6RXGnND3FcWt1e-nptcslp2dsLfDbYiu8MJJuafoXGWvsL39cNCsWakFlOEswzarDkm7ZRoVq4rsmpQgTXkpQxthioeTzO5xdHpaNTwa8xkLafTG-Rh9vnXzIU5S5nm3IOP0Bk6OrvlVSqZC1WzU52Rtb7GdjisQpSBdmLgGKp_JmTv9uP9j3XZ61Aerq4zAN6WOIZ-nG4YdSdi5cNzzG8TlpKye7aQzGN35fR0N9beieKmSTZZgK8ZlfoFXjVyr2w"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-stack-lg px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto flex flex-col justify-center min-h-[calc(100vh-160px)]">
+<!-- Focus Container for Chat -->
+<div class="max-w-2xl mx-auto w-full flex flex-col gap-stack-md">
+<!-- Level Selector: Level 1 (Rule-Based) / Level 2 (Chatbot) / Level 3 (ReAct Agent) -->
+<div class="flex justify-center gap-2 mb-2 message-enter">
+<button class="level-btn active px-5 py-2 rounded-full font-label-md text-label-md bg-primary text-on-primary transition-colors duration-200" data-level="1">Level 1 · Rule-Based</button>
+<button class="level-btn px-5 py-2 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface-variant transition-colors duration-200" data-level="2">Level 2 · Chatbot</button>
+<button class="level-btn px-5 py-2 rounded-full font-label-md text-label-md bg-surface-container-high text-on-surface-variant transition-colors duration-200" data-level="3">Level 3 · ReAct Agent</button>
+</div>
+<!-- Chat log: được JS điền động, không còn hardcode -->
+<div class="flex flex-col gap-stack-md" id="chat-log">
+<div class="text-center font-caption text-caption text-outline mb-4 message-enter">
+                Hỏi về đơn hàng của bạn, vd: "Đơn hàng #A1001 của tôi có đổi trả được không?"
+            </div>
+</div>
+<!-- Input Row -->
+<div class="flex gap-3 items-center bg-surface-container-lowest rounded-full soft-shadow border border-surface-variant/50 p-2 message-enter">
+<input class="flex-grow bg-transparent px-4 py-2 outline-none font-body-md text-body-md text-on-surface placeholder:text-outline" id="question-input" placeholder="Nhập câu hỏi..." type="text"/>
+<button class="bg-primary text-on-primary rounded-full w-11 h-11 flex items-center justify-center shrink-0 hover:bg-surface-tint transition-colors duration-200 disabled:opacity-50" id="send-btn">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full py-stack-lg flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop mt-auto">
+<div class="font-display-lg text-display-lg-mobile text-secondary flex items-center gap-2 mb-6 md:mb-0">
+<span class="material-symbols-outlined text-secondary">eco</span>
+<span>Re-Life</span>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-6 md:gap-gutter">
+<div class="flex gap-6">
+<a class="font-caption text-caption text-on-surface-variant opacity-80 hover:text-primary transition-opacity duration-200" href="#">Privacy Policy</a>
+<a class="font-caption text-caption text-on-surface-variant opacity-80 hover:text-primary transition-opacity duration-200" href="#">Terms of Service</a>
+<a class="font-caption text-caption text-on-surface-variant opacity-80 hover:text-primary transition-opacity duration-200" href="#">Contact Support</a>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-4 md:mt-0 text-center md:text-left">
+                © 2024 Re-Life. A moment of quiet efficiency.
+            </p>
+</div>
+</footer>
+<script>
+        // Nối front_end với backend qua POST /api/query (xem src/server.py).
+        // KHÔNG chứa logic nghiệp vụ ở đây — chỉ gọi API và render kết quả.
+        (function () {
+            let currentLevel = 1;
+            const levelButtons = document.querySelectorAll(".level-btn");
+            const chatLog = document.getElementById("chat-log");
+            const input = document.getElementById("question-input");
+            const sendBtn = document.getElementById("send-btn");
+
+            function setActiveLevel(level) {
+                currentLevel = level;
+                levelButtons.forEach((btn) => {
+                    const isActive = parseInt(btn.dataset.level, 10) === level;
+                    btn.classList.toggle("bg-primary", isActive);
+                    btn.classList.toggle("text-on-primary", isActive);
+                    btn.classList.toggle("bg-surface-container-high", !isActive);
+                    btn.classList.toggle("text-on-surface-variant", !isActive);
+                });
+            }
+
+            levelButtons.forEach((btn) => {
+                btn.addEventListener("click", () => setActiveLevel(parseInt(btn.dataset.level, 10)));
+            });
+
+            function escapeHtml(str) {
+                const div = document.createElement("div");
+                div.textContent = str == null ? "" : String(str);
+                return div.innerHTML;
+            }
+
+            function appendUserMessage(text) {
+                const row = document.createElement("div");
+                row.className = "flex justify-end w-full message-enter";
+                const bubble = document.createElement("div");
+                bubble.className =
+                    "bg-tertiary-fixed text-on-tertiary-fixed-variant px-6 py-4 rounded-t-xl rounded-bl-xl rounded-br-sm max-w-[85%] font-body-md text-body-md soft-shadow";
+                bubble.textContent = text;
+                row.appendChild(bubble);
+                chatLog.appendChild(row);
+            }
+
+            function appendAssistantMessage(innerHtml, isPlaceholder) {
+                const row = document.createElement("div");
+                row.className = "flex justify-start w-full gap-4 items-end message-enter";
+                row.innerHTML =
+                    '<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center shrink-0 mb-2">' +
+                    '<span class="material-symbols-outlined text-on-primary-container text-sm">spa</span></div>' +
+                    '<div class="bg-surface-container-lowest text-on-surface px-6 py-4 rounded-t-xl rounded-br-xl rounded-bl-sm max-w-[85%] font-body-md text-body-md soft-shadow border border-surface-variant/50"></div>';
+                const bubble = row.querySelector("div.bg-surface-container-lowest");
+                bubble.innerHTML = innerHtml;
+                if (isPlaceholder) bubble.classList.add("italic", "text-on-surface-variant");
+                chatLog.appendChild(row);
+                row.scrollIntoView({ behavior: "smooth", block: "end" });
+                return row;
+            }
+
+            function buildResultHtml(data) {
+                let html = "<div>" + escapeHtml(data.answer).replace(/\n/g, "<br/>") + "</div>";
+
+                html +=
+                    '<div class="mt-3 pt-3 border-t border-surface-variant/50 flex gap-4 flex-wrap font-caption text-caption text-outline">' +
+                    "<span>tool_calls: <b class=\"text-on-surface-variant\">" + escapeHtml(data.tool_calls) + "</b></span>" +
+                    "<span>grounded: <b class=\"text-on-surface-variant\">" + escapeHtml(data.grounded) + "</b></span>";
+                if (data.steps_used !== undefined && data.steps_used !== null) {
+                    html += "<span>steps_used: <b class=\"text-on-surface-variant\">" + escapeHtml(data.steps_used) + "</b></span>";
+                }
+                html += "</div>";
+
+                if (Array.isArray(data.trace) && data.trace.length > 0) {
+                    html +=
+                        '<details class="mt-3 pt-3 border-t border-surface-variant/50">' +
+                        '<summary class="cursor-pointer font-label-md text-label-md text-primary">Xem trace (Thought → Action → Observation)</summary>' +
+                        '<div class="mt-2 flex flex-col gap-2 font-caption text-caption text-on-surface-variant">';
+                    data.trace.forEach((t) => {
+                        html += "<div><b>Step " + escapeHtml(t.step) + "</b> — Thought: " + escapeHtml(t.thought || "");
+                        if (t.action) html += "<br/>Action: " + escapeHtml(t.action);
+                        if (t.observation) html += "<br/>Observation: " + escapeHtml(t.observation);
+                        html += "</div>";
+                    });
+                    html += "</div></details>";
+                }
+                return html;
+            }
+
+            async function sendQuestion() {
+                const question = input.value.trim();
+                if (!question) return;
+
+                input.value = "";
+                sendBtn.disabled = true;
+                appendUserMessage(question);
+                const loadingRow = appendAssistantMessage(
+                    "Đang xử lý (Level " + currentLevel + ")...",
+                    true
+                );
+
+                try {
+                    const res = await fetch("/api/query", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ level: currentLevel, question: question }),
+                    });
+                    const data = await res.json();
+                    loadingRow.remove();
+
+                    if (!res.ok || data.error) {
+                        appendAssistantMessage(
+                            '<span class="text-error">' + escapeHtml(data.error || "Lỗi không xác định từ server.") + "</span>"
+                        );
+                    } else {
+                        appendAssistantMessage(buildResultHtml(data));
+                    }
+                } catch (err) {
+                    loadingRow.remove();
+                    appendAssistantMessage(
+                        '<span class="text-error">Không kết nối được tới server: ' + escapeHtml(err.message) + "</span>"
+                    );
+                } finally {
+                    sendBtn.disabled = false;
+                    input.focus();
+                }
+            }
+
+            sendBtn.addEventListener("click", sendQuestion);
+            input.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") sendQuestion();
+            });
+        })();
+    </script>
+</body></html>
