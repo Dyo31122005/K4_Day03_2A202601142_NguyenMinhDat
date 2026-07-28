@@ -1,7 +1,7 @@
 # Individual Report: Lab 3 - Chatbot vs ReAct Agent
 
 - **Student Name**: Nguyễn Thị Hương Trà
-- **Student ID**: [Điền MSSV]
+- **Student ID**: 2A202601416
 - **Date**: 28/07/2026
 - **Role**: Guardrails, Agent V2 & Defense (Cross-Audit)
 ---
